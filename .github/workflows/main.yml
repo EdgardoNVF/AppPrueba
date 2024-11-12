@@ -21,6 +21,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Build 
+        working-directory: ./MicroserviceItem
         run: mvn clean install -DskipTests=false
         
   
