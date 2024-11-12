@@ -26,5 +26,5 @@ jobs:
         run: ls -R
         
       - name: Build with Maven
-        working-directory: /home/runner/work/AppPrueba/AppPrueba/MicroserviceItem/MicroserviceItem
+        working-directory: /home/runner/work/AppPrueba/AppPrueba/MicroserviceItem/
         run: mvn clean install -DskipTests=false 
