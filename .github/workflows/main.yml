@@ -21,6 +21,11 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+          
+      - name: List directory contents
+        run: ls -R
+        working-directory: MicroserviceItem
+
 
       - name: Cache Maven packages
         uses: actions/cache@v2
