@@ -21,10 +21,14 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          
-      - name: List directory contents
-        run: ls -R
-        
+
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/MicroserviceItem/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven
+
       - name: Build with Maven
-        working-directory: /home/runner/work/AppPrueba/AppPrueba/MicroserviceItem/
-        run: mvn clean install -DskipTests=false 
+        run: mvn -f MicroserviceItem/pom.xml clean install -DskipTests=false  # Ejecuta Maven con la ruta completa
