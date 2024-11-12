@@ -23,7 +23,7 @@ jobs:
           java-version: '17'
           
       - name: List directory contents
-        run: pwd
+        run: ls -R
         
 
 
