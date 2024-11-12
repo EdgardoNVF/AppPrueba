@@ -24,6 +24,10 @@ jobs:
 
       - name: Build with Maven
         run: mvn -f MicroservicieItem/pom.xml clean install -DskipTests=false  # Ejecuta Maven con la ruta completa
+
+      - name: List all files in MicroservicieItem
+        run: ls -la MicroservicieItem
+
         
       - name: Build Docker image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }} .
