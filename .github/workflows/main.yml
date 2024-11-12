@@ -36,4 +36,4 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install -DskipTests=false
-        working-directory: ./MicroserviceItem  # Esto define el directorio donde se ejecutará Maven
+        working-directory: MicroserviceItem  # Esto define el directorio donde se ejecutará Maven
