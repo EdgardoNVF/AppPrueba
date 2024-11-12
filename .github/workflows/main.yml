@@ -30,5 +30,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven
 
+      - name: Check the current directory
+        run: pwd
+      - name: List all files
+        run: ls -R /home/runner/work/AppPrueba/AppPrueba
+
       - name: Build with Maven
         run: mvn -f MicroserviceItem/pom.xml clean install -DskipTests=false  # Ejecuta Maven con la ruta completa
